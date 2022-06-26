@@ -1,7 +1,12 @@
 const { Schema } = require('mongoose');
 
 const taskSchema = new Schema({
-  task: String,
+  titulo: String,
+  descrição: String,
+  data: String,
+  hora: String,
+  duração: String,
+  atributo: String,
 });
 
 module.exports = taskSchema;
