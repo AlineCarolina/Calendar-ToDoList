@@ -13,7 +13,6 @@ describe('Teste taskModel', () => {
 
   after(async () => {
     await TaskModel.remove({});
-    await mongoose.connection.close();
   });
 
   it('deve criar uma nova tarefa no DB', async () => {
