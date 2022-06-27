@@ -14,7 +14,6 @@ describe('Teste taskService', () => {
 
   after(async () => {
     await TaskModel.remove({});
-    await mongoose.connection.close();
   });
 
   it('TaskService retorna um array', async () => {
