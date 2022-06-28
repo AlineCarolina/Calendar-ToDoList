@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /backend
+WORKDIR /frontend
 
 COPY package.json .
 
@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD [ "npm" , "start"]

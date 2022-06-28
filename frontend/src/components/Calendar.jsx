@@ -10,7 +10,7 @@ const ReactCalendar = () => {
   };
 
   return (
-    <div>
+    <div className='page-calendar'>
       <Calendar onChange={handleChange} value={date} />
     </div>
   )
