@@ -6,8 +6,7 @@
   "scripts": {
     "test": "mocha src/tests/**/*.test.js --exit",
     "start": "node .",
-    "dev": "nodemon .",
-    "build": "node build/build.js"
+    "dev": "nodemon ."
   },
   "author": "Aline Carolina Correia",
   "license": "ISC",
