@@ -23,4 +23,22 @@ export const post = async (endpoint, body) => {
   }
 };
 
+export const update = async (endpoint, id, task) => {
+  try {
+    const { data } = await api.put(endpoint + id, task);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteTask = async (endpoint) => {
+  try {
+    const { data } = await api.delete(endpoint);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export default api;

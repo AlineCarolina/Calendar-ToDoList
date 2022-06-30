@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-/* mongodb://localhost:27017/db */
+/* mongodb://root:12345@db:27017/db?authSource=admin */
 
 const serverConnection = () => {
-  mongoose.connect('mongodb://root:12345@db:27017/db?authSource=admin', {
+  mongoose.connect('mongodb://localhost:27017/db', {
     useNewUrlParser: true,
   }).then(() => {
     console.log('Connected to MongoDB');
