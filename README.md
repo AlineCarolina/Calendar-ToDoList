@@ -8,6 +8,7 @@ Neste projeto foi desenvolvido uma aplicação _Single Page_ de um calendário d
     <ul>
         <li>Exibe um calendário onde é possivel selecionar uma data para adicionar uma nova tarefa</li>
         <li>Cadastra uma nova tarefa no banco de dados</li>
+        <li>Edita uma tarefa</li>
         <li>Exclui tarefas selecionadas</li>
     </ul>
 
@@ -43,4 +44,4 @@ $ npm test
 ```
 
 ## Considerações Finais
-Este projeto continua em desenvolvimeto e novas funcionalidades serão adicionadas em breve, como: editar tarefas, mudar forma de vizualização do calendário, vizualizar tarefa no dia do calendário, etc.
+Este projeto continua em desenvolvimeto e novas funcionalidades serão adicionadas em breve, como: mudar forma de vizualização do calendário, vizualizar tarefa no dia do calendário, etc.

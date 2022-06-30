@@ -6,7 +6,6 @@ const taskSchema = new Schema({
   data: String,
   hora: String,
   duração: String,
-  atributo: String,
 });
 
 module.exports = taskSchema;

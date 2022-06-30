@@ -4,7 +4,9 @@ const TaskModel = require('../../models/taskModel');
 const taskService = require('../../services/taskService');
 const taskList = require('../mocks/taskMocks');
 
-const mongoDB = 'mongodb://127.0.0.1/my_test_database';
+/* mmongodb://127.0.0.1/my_test_database */
+
+const mongoDB = 'mongodb://root:12345@db:27017/dbTest?authSource=admin';
 mongoose.connect(mongoDB);
 
 describe('Teste taskService', () => {

@@ -11,11 +11,11 @@ const getAll = async (_req, res) => {
 
 const create = async (req, res) => {
   const {
-    titulo, descrição, data, hora, duração, atributo,
+    titulo, descrição, data, hora, duração,
   } = req.body;
   try {
     const created = await taskService.create({
-      titulo, descrição, data, hora, duração, atributo,
+      titulo, descrição, data, hora, duração,
     });
     res.status(201).json(created);
   } catch (err) {
@@ -26,11 +26,11 @@ const create = async (req, res) => {
 const update = async (req, res) => {
   const { id } = req.params;
   const {
-    titulo, descrição, data, hora, duração, atributo,
+    titulo, descrição, data, hora, duração,
   } = req.body;
   try {
     const updated = await taskService.update(id, {
-      titulo, descrição, data, hora, duração, atributo,
+      titulo, descrição, data, hora, duração,
     });
     res.status(200).json(updated);
   } catch (err) {

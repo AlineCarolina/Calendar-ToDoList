@@ -6,20 +6,20 @@ const getAll = async () => {
 };
 
 const create = async ({
-  titulo, descrição, data, hora, duração, atributo,
+  titulo, descrição, data, hora, duração,
 }) => {
   const newTask = new Task({
-    titulo, descrição, data, hora, duração, atributo,
+    titulo, descrição, data, hora, duração,
   });
   const created = await newTask.save();
   return created;
 };
 
 const update = async (id, {
-  titulo, descrição, data, hora, duração, atributo,
+  titulo, descrição, data, hora, duração,
 }) => {
   const updated = await Task.findByIdAndUpdate(id, {
-    titulo, descrição, data, hora, duração, atributo,
+    titulo, descrição, data, hora, duração,
   });
   return updated;
 };

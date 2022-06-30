@@ -23,9 +23,9 @@ export const post = async (endpoint, body) => {
   }
 };
 
-export const update = async (endpoint, id, task) => {
+export const update = async (endpoint, task) => {
   try {
-    const { data } = await api.put(endpoint + id, task);
+    const { data } = await api.put(endpoint, task);
     return data;
   } catch (error) {
     console.log(error);

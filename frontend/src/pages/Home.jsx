@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
-import { post, request, deleteTask } from '../services/api';
+import { post, request, update, deleteTask } from '../services/api';
 import 'react-calendar/dist/Calendar.css';
 import '../styles/Home.css';
 
@@ -12,9 +12,9 @@ function Home() {
     descrição: '',
     data: '',
     hora: '',
-    duração: '',
-    atributo: ''
+    duração: ''
   });
+  const [controll, setControll] = useState(false)
 
   useEffect(() => {
     request('/')
@@ -41,6 +41,37 @@ function Home() {
   const postItem = async (e) => {
     e.preventDefault();
     const data = await post('/', input);
+    setInput({
+      titulo: '',
+      descrição: '',
+      data: '',
+      hora: '',
+      duração: ''
+    });
+  };
+
+  const updateTask = async (url, task) => {
+    setInput({
+      titulo: `${task.titulo}`,
+      descrição: `${task.descrição}`,
+      data: `${task.descrição}`,
+      hora: `${task.descrição}`,
+      duração: `${task.descrição}`,
+      url: url,
+    });
+   setControll(true)
+  };
+
+  const updateItem = async (e) => {
+    e.preventDefault();
+    const data = await update(input.url, input);
+    setInput({
+      titulo: '',
+      descrição: '',
+      data: '',
+      hora: '',
+      duração: ''
+    });
   };
 
   return (
@@ -54,6 +85,7 @@ function Home() {
               type="text"
               onChange={ (e) => handleChange(e) }
               name="titulo"
+              value={input.titulo}
             />
           </label>
           <label>
@@ -62,6 +94,7 @@ function Home() {
               type="text"
               onChange={ (e) => handleChange(e) }
               name="descrição"
+              value={input.descrição}
             />
           </label>
           <label>
@@ -79,6 +112,7 @@ function Home() {
               type="text"
               onChange={ (e) => handleChange(e) }
               name="hora"
+              value={input.hora}
             />
           </label>
           <label>
@@ -87,22 +121,29 @@ function Home() {
               type="text"
               onChange={ (e) => handleChange(e) }
               name="duração"
+              value={input.duração}
             />
           </label>
-          <label>
-            Atributo
-            <input
-              type="text"
-              onChange={ (e) => handleChange(e) }
-              name="atributo"
-            />
-          </label>
-          <button
+          {
+            controll === false &&
+            <button
             type="button"
             onClick={ (e) => postItem(e) }
+            id="button-add"
           >
             Add
           </button>
+          }
+          {
+            controll === true &&
+            <button
+            type="button"
+            onClick={ (e) => updateItem(e) }
+            id="button-up"
+          >
+            Up
+          </button>
+          }
         </div>
       </div>
       {list.map(item => (
@@ -118,6 +159,12 @@ function Home() {
             onClick={ () => deleteTask(`/${item._id}`) }
           >
             Delete
+          </button>
+          <button
+            type="button"
+            onClick={ () => updateTask(`/${item._id}`, item) }
+          >
+            Edit
           </button>
         </div>
       ))}
