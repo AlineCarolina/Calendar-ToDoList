@@ -3,6 +3,11 @@ Aplicação de uma lista de tarefas com calendário.
 
 ---
 
+![image](./public/images/app.png)
+![image](./public/images/app2.png)
+
+---
+
 ## Sobre o Projeto
 Neste projeto foi desenvolvido uma aplicação _Single Page_ de um calendário de tarefas, com as seguintes funcionalidades:
     <ul>

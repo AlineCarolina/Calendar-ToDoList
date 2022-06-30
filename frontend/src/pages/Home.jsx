@@ -75,7 +75,8 @@ function Home() {
   };
 
   return (
-    <div id="div-page">
+    <>
+      <div id="div-page">
       <Calendar onChange={handleChangeDate} value={date} />
       <div className='div-form'>
         <div className='form-task'>
@@ -130,8 +131,9 @@ function Home() {
             type="button"
             onClick={ (e) => postItem(e) }
             id="button-add"
+            className="button-form"
           >
-            Add
+            SALVAR
           </button>
           }
           {
@@ -139,36 +141,46 @@ function Home() {
             <button
             type="button"
             onClick={ (e) => updateItem(e) }
-            id="button-up"
+            id="button-update"
+            className="button-form"
           >
-            Up
+            ATUALIZAR
           </button>
           }
         </div>
       </div>
+    </div>
+    <div className="item-task">
       {list.map(item => (
         <div key={item._id} className="task">
-          <h3>{item.titulo}</h3>
-          <p>{item.descrição}</p>
-          <p>{item.data}</p>
-          <p>{item.hora}</p>
-          <p>{item.duração}</p>
-          <p>{item.atributo}</p>
+          <h1>Tarefa</h1>
+          <div className="content-task">
+            <h3>{item.titulo}</h3>
+            <p>Descrição: {item.descrição}</p>
+            <p>Data: {item.data}</p>
+            <p>Hora: {item.hora}</p>
+            <p>Duraçaõ: {item.duração}</p>
+            </div>
           <button
             type="button"
             onClick={ () => deleteTask(`/${item._id}`) }
+            className="button-form"
+            id="delete-btn"
           >
             Delete
           </button>
           <button
             type="button"
             onClick={ () => updateTask(`/${item._id}`, item) }
+            className="button-form"
+            id="update-btn"
           >
             Edit
           </button>
         </div>
       ))}
-    </div>
+      </div>
+    </>
   )
 }
 
