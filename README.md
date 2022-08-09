@@ -1,4 +1,4 @@
-# Diel Challenge
+# Calendar ToDoList
 Aplicação de uma lista de tarefas com calendário.
 
 ---
