@@ -35,8 +35,8 @@ Neste projeto foi desenvolvido uma aplicação _Single Page_ de um calendário d
 Para instalar e executar o calendário de tarefas você deve ter o [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) e o [Docker](https://docs.docker.com/install/) instalados e configurados.
 Utilizando o terminal, faça o clone do projeto:
 ```
-$ git clone git@github.com:AlineCarolina/Diel-Challenge.git
-$ cd DielChallenge
+$ git clone git@github.com:AlineCarolina/Calendar-ToDoList.git
+$ cd Calendar-ToDoList
 ```
 Use o Docker para carregar e depois disponibilizar todos os serviços necessários ao funcionamento:
 ```
